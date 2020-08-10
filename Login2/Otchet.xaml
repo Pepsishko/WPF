@@ -1,0 +1,47 @@
+﻿<Window x:Class="Login2.Otchet"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Login2"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="500" Width="350" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        FontFamily="Segoe UI Emoji">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="313*"/>
+            <RowDefinition Height="187*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="280" Height="240" VerticalAlignment="Bottom" Margin="35,0,35,80" RadiusY="10" RadiusX="10" Fill="White" Grid.RowSpan="2">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid VerticalAlignment="Bottom" Margin="35,0,35,80" Height="240" Grid.RowSpan="2">
+            <Label x:Name="nameOt" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+            <StackPanel VerticalAlignment="Center" Margin="15">
+                <ComboBox x:Name="operation" Margin="0,10" materialDesign:HintAssist.Hint="Выберите операцию"  FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox x:Name="kolich" Margin="0,10" materialDesign:HintAssist.Hint="Введите количество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="button1" Width="230" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="60,0,60,65" Content="СФОРМИРОВАТЬ ДОКУМЕНТ" Grid.Row="1" Click="Button1_Click"/>
+        <Button x:Name="ButtonFechar" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="WhiteSmoke"  Margin="300,10,10,265" Click="ButtonFechar_Click">
+            <materialDesign:PackIcon Kind="Power" Height="21" Width="22"/>
+        </Button>
+    </Grid>
+</Window>
